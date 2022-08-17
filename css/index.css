@@ -78,6 +78,11 @@
             border-radius: 1rem;
             border: #333 1px solid;
         }
+        
+        .divImgCripto img {
+            width: 100px;
+            height: 100px;
+        }
         /* ------------------------------- */
         
         footer {
