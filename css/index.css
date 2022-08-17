@@ -1,0 +1,85 @@
+        #contenedorPadre {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header {
+            background-color: aqua;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        
+        header h1 {
+            margin-left: 45%;
+            display: flex;
+            text-align: center;
+            position: sticky;
+        }
+        
+        header div button {
+            border-style: none;
+            border-radius: 0.6rem;
+            background-color: #3dcfff;
+            padding: 0.3rem 0.2rem;
+        }
+        
+        header div button:hover {
+            background-color: #00bbff;
+            transition: 0.3s;
+        }
+        
+        .zona-login {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 0.5rem;
+        }
+        
+        .zona-login i {
+            color: white;
+            font-size: x-large;
+        }
+        
+        .btn-login {
+            display: flex;
+            flex-direction: column;
+        }
+        /* --------------------------------------------- */
+        
+        #contenido {
+            display: flex;
+            background-color: antiquewhite;
+            justify-content: space-between;
+        }
+        
+        #contenido .contenido {
+            background-color: beige;
+            width: 30%;
+            padding: 100% 0;
+            margin: 1rem;
+            border: 1px solid #333;
+        }
+        
+        #nav2 {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #infoNav2 select {
+            text-align: center;
+            border: none;
+            outline: none;
+        }
+        
+        .divCoin {
+            margin: 0.5rem;
+            text-align: center;
+            background-color: gold;
+            border-radius: 1rem;
+            border: #333 1px solid;
+        }
+        /* ------------------------------- */
+        
+        footer {
+            background-color: #555;
+        }

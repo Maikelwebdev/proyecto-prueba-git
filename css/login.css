@@ -1,0 +1,15 @@
+#login-normal {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-30 {
+    background-color: antiquewhite;
+    border-style: none;
+    padding: 0.7rem;
+    border-radius: 2rem;
+}
+
+#login-normal input {
+    margin: 0.2rem 0.5rem;
+}
