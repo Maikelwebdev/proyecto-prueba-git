@@ -4,8 +4,6 @@ let selectCoins = document.querySelector('#selectCoins');
 const url = "https://api.nomics.com/v1/currencies/ticker?key=fb5b5c9e8fcfcff6f3f853406e6d5d0006e3f10a";
 var coinId;
 // &ids=BTC,ETH,IOT
-// Cambiando el nombre de la carpeta de "Js" a "js"
-//intervalo se ceba de los datos de un estado
 
 //rellenamos el select con las coins
 fetch(url)
@@ -22,8 +20,9 @@ function rellenarSelect(data) {
         selectCoins.append(opcionCoin);
     }
 
+    //Settimeout para cargar la primera coin
     setTimeout(() => {
-        [{ id: coinId }] = data
+        [{ id: coinId }] = data; //deestructuring para sacar la id de la primera coin
         llamarCoin(coinId);
     }, 1000);
 
@@ -32,7 +31,6 @@ function rellenarSelect(data) {
         coinId = e.target.value;
         llamarCoin(coinId)
     })
-
     setInterval(getCoinById, 2000);
 }
 
@@ -46,13 +44,10 @@ function getCoinById() {
 //Fetch a la coin seleccionada y luego llamada a la funcion de muestra de la coin
 function llamarCoin(coinId) {
     let filtro = "&ids=" + coinId;
-
     fetch(url + filtro)
         .then(response => response.json())
         .then(data => mostrarCoin(data));
-
     console.log("Se esta haciendo fetch de:" + coinId);
-
 }
 
 
@@ -63,25 +58,24 @@ function mostrarCoin(data) {
         //Crear div de la moneda
         let divCoin = document.createElement('div');
         divCoin.classList.add("divCoin");
-        //id,precio y foto
-        let idCripto = document.createElement('div');
-        idCripto.textContent = criptocoin.name;
+        //name,precioEnDolares, numeroCoinsConUnDolar, logoCoin
+        let nameCripto = document.createElement('div');
+        nameCripto.textContent = criptocoin.name;
+        //
         let precioCriptoEnDolares = document.createElement('div');
         precioCriptoEnDolares.textContent = criptocoin.price.substring(0, 8) + " $/" + criptocoin.id;
-
-
+        //
         let precioDolaresCripto = document.createElement('div');
         precioDolaresCripto.textContent = (1 / criptocoin.price);
         precioDolaresCripto.textContent = precioDolaresCripto.textContent.substring(0, 10) + " " + criptocoin.id + "/$";
-
-        let marcoImgCripto = document.createElement('div');
+        //
+        let divImgCripto = document.createElement('div');
+        divImgCripto.classList.add("divImgCripto");
         let imgCripto = document.createElement('img');
         imgCripto.src = criptocoin.logo_url;
-        imgCripto.style.width = "100px";
-        imgCripto.style.height = "100px";
-        marcoImgCripto.append(imgCripto);
+        divImgCripto.append(imgCripto);
         //append de la moneda al nav2Coins
-        divCoin.append(idCripto, precioCriptoEnDolares, precioDolaresCripto, marcoImgCripto);
+        divCoin.append(nameCripto, precioCriptoEnDolares, precioDolaresCripto, divImgCripto);
         nav2Coins.append(divCoin);
     }
 }
