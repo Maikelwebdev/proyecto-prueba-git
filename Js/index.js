@@ -4,7 +4,7 @@ let selectCoins = document.querySelector('#selectCoins');
 const url = "https://api.nomics.com/v1/currencies/ticker?key=fb5b5c9e8fcfcff6f3f853406e6d5d0006e3f10a";
 var coinId;
 // &ids=BTC,ETH,IOT
-
+// Cambiando el nombre de la carpeta de "Js" a "js"
 //intervalo se ceba de los datos de un estado
 
 //rellenamos el select con las coins
